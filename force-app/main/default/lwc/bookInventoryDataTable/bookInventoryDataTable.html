@@ -1,0 +1,40 @@
+<template>
+     <div class="slds-m-bottom_medium">
+        <lightning-button label="Create New Book" variant="brand" onclick={openCreateBookModal}></lightning-button>
+    </div>
+    <!-- Modal for create/edit book form -->
+     <template if:true={showCreateModal}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <div class="slds-modal slds-fade-in-open" role="dialog">
+            <div class="slds-modal__container">
+                <div class="slds-modal__content slds-p-around_medium">
+                    <c-create-edit-book-form attachment-id={attachmentId} record-id={selectedRecordId} create-operation={createOperation} record-data={recordData} onrecordcreated={handleBookCreated} onrecordupdated={handleRecordUpdated} oncancel={closeCreateBookModal}></c-create-edit-book-form>
+                </div>
+            </div>
+        </div>
+    </template>
+      
+    <lightning-card title="Book Inventory">
+        <div class="slds-m-around_medium">            
+            <c-book-inventory-image-data-table
+                key-field="id"
+                data={bookInventoryData}
+                hide-checkbox-column="true"
+                onrowaction={handleRowAction}
+                columns={columns}
+                resize-column-disabled="true">
+            </c-book-inventory-image-data-table>
+            <!-- Pagination controls -->
+            <div class="slds-m-top_medium">
+                <lightning-layout>
+                    <lightning-layout-item flexibility="auto">
+                        <lightning-button label="Previous" disabled={isPrevDisabled} onclick={handlePrev}></lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto">
+                        <lightning-button label="Next" disabled={isNextDisabled} onclick={handleNext}></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+    </lightning-card>   
+</template>

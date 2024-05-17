@@ -1,0 +1,8 @@
+Hi {!Book_Inventory__c.OwnerFullName},
+
+Your Book Inventory request for {!Book_Inventory__c.Title__c} has been approved. 
+
+{!Book_Inventory__c.Link}
+
+Thanks,
+Team.

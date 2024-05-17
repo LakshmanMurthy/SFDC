@@ -1,0 +1,9 @@
+Hi {!User.Manager},
+
+You have received a request for approval for book inventory {!Book_Inventory__c.Title__c}
+
+Please verify and approve
+{!Book_Inventory__c.Link}
+
+Thanks,
+Team.

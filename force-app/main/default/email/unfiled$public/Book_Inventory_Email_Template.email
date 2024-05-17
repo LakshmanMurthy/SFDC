@@ -1,0 +1,9 @@
+Hi {!User.Name}
+
+Welcome to Book Inventory Store. You have created a request for approval for {!Book_Inventory__c.Title__c}. It is waiting for your approval at {!Approval_Requesting_User.Manager}. We will notify once approved.
+
+{!Book_Inventory__c.Link}
+
+
+Thanks,
+Store Team.
